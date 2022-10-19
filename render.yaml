@@ -7,7 +7,7 @@ databases:
 
 services:
   - type: web
-    name: example
+    name: kore_gem
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
