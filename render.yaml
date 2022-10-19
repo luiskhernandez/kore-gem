@@ -1,0 +1,23 @@
+# render.yaml
+databases:
+  - name: kore_gem_db
+    databaseName: kore_gem_db
+    user: kore_gem_db
+    plan: free
+
+services:
+  - type: web
+    name: kore_gem
+    plan: free
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "rails server -e production"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kore_gem_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: RAILS_SERVE_STATIC_FILES
+        value: true
