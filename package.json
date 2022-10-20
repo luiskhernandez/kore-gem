@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "tailwindcss -i ./app/assets/stylesheets/kore/kore.tailwind.css -o ./app/assets/stylesheets/kore.css --watch",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/kore/kore.tailwind.css -o ./app/assets/stylesheets/kore.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.0"
+  }
+}

@@ -15,3 +15,7 @@ gem "puma", "~> 5.6"
 
 gem "lookbook", "~> 1.1"
 gem "view_component", "~> 2.74"
+
+group :development, :test do
+  gem "foreman"
+end

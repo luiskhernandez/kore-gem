@@ -83,6 +83,7 @@ GEM
       addressable
     erubi (1.11.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     htmlbeautifier (1.4.2)
@@ -195,6 +196,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  foreman
   kore!
   lookbook (~> 1.1)
   pg

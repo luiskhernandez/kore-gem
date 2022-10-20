@@ -11,3 +11,7 @@
 
 /config/master.key
 /spec/dummy/config/master.key
+node_modules/
+/app/assets/stylessheets/kore.css
+
+.keep
