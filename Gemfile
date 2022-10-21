@@ -1,10 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+ruby "3.1.2"
 # Specify your gem's dependencies in kore.gemspec.
 gemspec
-
-gem "pg"
 
 gem "sprockets-rails"
 
