@@ -1,0 +1,20 @@
+<% variants = [:normal, :primary, :secondary, :accent, :info, :success, :warning, :error, :ghost, :link, :outline] %>
+<div class="flex space-x-8 container mx-auto">
+  <div class="flex flex-col space-y-2">
+    <% variants.each do |variant| %>
+      <div class="flex justify-between items-center">
+        <span><%= variant %></span>
+        <%= button("demo text", variant: variant, left_icon: "user-plus") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="flex flex-col space-y-2">
+    <% variants.each do |variant| %>
+      <div class="flex justify-between items-center">
+        <span><%= variant %></span>
+        <%= button("demo text", variant: variant, right_icon: "user-plus") %>
+      </div>
+    <% end %>
+  </div>
+</div>

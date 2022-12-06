@@ -13,6 +13,8 @@ gem "puma", "~> 5.6"
 
 gem "lookbook", "~> 1.1"
 gem "view_component", "~> 2.74"
+gem "inline_svg", "~> 1.8.0"
+gem "heroicon"
 
 group :development, :test do
   gem "foreman"

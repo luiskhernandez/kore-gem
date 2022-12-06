@@ -2,6 +2,7 @@ module Kore
   module ViewHelper
     ADMIN_HELPERS = {
       example: 'ExampleComponent',
+      button: 'ButtonComponent',
     }.freeze
 
     ADMIN_HELPERS.each do |name, component|
