@@ -1,5 +1,6 @@
 module Kore
   module ViewHelper
+
     ADMIN_HELPERS = {
       example: 'ExampleComponent',
       button: 'ButtonComponent',
@@ -9,6 +10,20 @@ module Kore
       define_method name.to_s do |*args, **kwargs, &block|
         render "Kore::#{component}".constantize.new(*args, **kwargs), &block
       end
+    end
+
+    include ActionView::Helpers::UrlHelper
+    alias rails_default_link_to link_to
+
+    def link_to(name = nil, options = nil, html_options = nil, &block)
+      custom_options = html_options.extract!(:left_icon, :right_icon, :variant) if html_options
+      if custom_options.present?
+        return rails_default_link_to(options, html_options) do
+          render Kore::ButtonComponent.new(name, **custom_options.merge(tag: :span)), &block
+        end
+      end
+
+      rails_default_link_to(name, options, html_options, &block)
     end
   end
 end

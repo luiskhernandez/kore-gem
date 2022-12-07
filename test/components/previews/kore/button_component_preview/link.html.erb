@@ -1,0 +1,14 @@
+<div class="w-[200px] mx-auto mt-20 flex flex-col space-y-2">
+
+<%= link_to "demo", "/lookbook", variant: :primary %>
+
+<%= link_to "demo", "/lookbook", variant: :primary, left_icon: "user-plus" %>
+
+<%= link_to "demo", "/lookbook", variant: :primary, right_icon: "user-plus" %>
+
+<%= link_to "regular link", "/lookbook", class: "btn-link"  %>
+
+<%= link_to "/lookbook" do  %>
+  regular content
+<% end %>
+</div>

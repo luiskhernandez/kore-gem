@@ -2,7 +2,7 @@
 
 # The Dummy class is responsible for ...
 module Kore
-  class ButtonComponent < ViewComponent::Base
+  class ButtonComponent < ApplicationComponent
     include Heroicon::Engine.helpers
     VARIANTS = {
       primary: "btn-primary",
@@ -16,12 +16,18 @@ module Kore
       link: "btn-link",
       outline: "btn-outline",
     }
-    def initialize(text, variant: :normal, left_icon: nil, right_icon: nil)
+    def initialize(text = nil, variant: :normal, left_icon: nil, right_icon: nil, **options)
+      @options = options
       @text = text
       @variant = variant
       @left_icon = left_icon
       @right_icon = right_icon
-      super
+      options[:tag] ||= :button
+      options[:classes] = class_names(
+        "btn",
+        css_classes,
+        options[:classes]
+      )
     end
 
     def css_classes
