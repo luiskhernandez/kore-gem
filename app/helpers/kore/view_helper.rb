@@ -16,9 +16,9 @@ module Kore
     alias rails_default_link_to link_to
 
     def link_to(name = nil, options = nil, html_options = nil, &block)
-      custom_options = html_options.extract!(:left_icon, :right_icon, :variant) if html_options
-      if custom_options.present?
-        return rails_default_link_to(options, html_options) do
+      custom_options = html_options.extract!(:left_icon, :right_icon, :variant, :size, :type) if html_options
+      if custom_options.present? || name.nil?
+        return rails_default_link_to(options, html_options.merge(role: :button)) do
           render Kore::ButtonComponent.new(name, **custom_options.merge(tag: :span)), &block
         end
       end

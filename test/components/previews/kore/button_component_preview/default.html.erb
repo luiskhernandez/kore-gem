@@ -1,15 +1,10 @@
-<div class="w-[200px] mx-auto flex flex-col space-y-2">
-  <div class="flex justify-between">
-    <span></span>
-    <%= button("Demo text") %>
-  </div>
-
+<div class="w-[600px] mx-auto flex flex-col space-y-2">
   <% [:normal, :primary, :secondary, :accent, :info, :success, :warning, :error, :ghost, :link, :outline].each do |variant| %>
     <div class="flex justify-between items-center">
-      <span><%= variant %></span>
+      <span class="w-1/4"><%= variant %></span>
       <%= button("demo text", variant: variant) %>
+      <%= button(variant: variant, type: :circle, left_icon: "user-plus") %>
+      <%= button(variant: variant, type: :square, left_icon: "user-plus") %>
     </div>
-
   <% end %>
-
 </div>

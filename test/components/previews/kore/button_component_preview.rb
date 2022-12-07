@@ -6,5 +6,6 @@ module Kore
     def default; end
     def icon; end
     def link; end
+    def sizes; end
   end
 end

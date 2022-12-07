@@ -1,10 +1,15 @@
 <%= render Kore::ApplicationComponent.new(**@options) do %>
   <% if @left_icon %>
-    <%= heroicon @left_icon, options: { class: "-ml-0.5 mr-2 h-4 w-4"}  %>
+    <%= heroicon @left_icon, options: { class: icon_classes }  %>
   <% end %>
-  <%= @text || content %>
-  <% if @right_icon %>
-    <%= heroicon @right_icon, options: { class: "h-4 w-4 ml-2 -mr-0.5"}  %>
+
+  <% if normal? %>
+      <%= @text || content %>
+    <% else %>
+      <span class="sr-only"> <%= @text %></span>
+    <% end %>
+    <% if @right_icon %>
+      <%= heroicon @right_icon, options: { class: icon_classes }  %>
+    <% end %>
   <% end %>
-<% end %>
 
